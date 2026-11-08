@@ -1,0 +1,11 @@
+let ctx:AudioContext|undefined;export let muted=false;
+let roomMusic:HTMLAudioElement|undefined,roomActive=false,audioPaused=false;
+function playRoomMusic(){if(roomMusic&&roomActive&&!audioPaused&&roomMusic.paused)void roomMusic.play().catch(()=>{/* A later user gesture can retry if autoplay is blocked. */})}
+export function startRoomMusic(){roomActive=true;if(!roomMusic){roomMusic=new Audio('./assets/trade_room_bgm.mp3');roomMusic.id='trade-room-music';roomMusic.loop=true;roomMusic.preload='auto';roomMusic.volume=.25;roomMusic.hidden=true;document.body.append(roomMusic)}roomMusic.muted=muted;playRoomMusic()}
+export function stopRoomMusic(){roomActive=false;if(roomMusic){roomMusic.pause();roomMusic.currentTime=0}}
+export function setAudioPaused(paused:boolean){audioPaused=paused;if(paused){roomMusic?.pause();if(ctx?.state==='running')void ctx.suspend()}else{if(ctx?.state==='suspended')void ctx.resume();playRoomMusic()}}
+
+export function unlock(){ctx??=new AudioContext();if(ctx.state==='suspended'&&!audioPaused)void ctx.resume();playRoomMusic()}
+export function toggleMute(){muted=!muted;if(roomMusic)roomMusic.muted=muted;return muted}
+export function sound(type:'coin'|'flip'|'low'|'win'='coin'){if(!ctx||muted||audioPaused)return;const t=ctx.currentTime;const notes=type==='win'?[660,880,1100,1320]:type==='coin'?[1400,1800]:type==='low'?[260]:[500];notes.forEach((f,i)=>{const o=ctx!.createOscillator(),g=ctx!.createGain();o.type=type==='flip'?'sawtooth':'sine';const start=t+i*.07;o.frequency.setValueAtTime(f,start);o.frequency.exponentialRampToValueAtTime(type==='low'?80:f*1.03,start+.15);g.gain.setValueAtTime(type==='flip'?.025:.045,start);g.gain.exponentialRampToValueAtTime(.0001,start+.18);o.connect(g).connect(ctx!.destination);o.start(start);o.stop(start+.2)})}
+export function paper(){if(!ctx||muted||audioPaused)return;const length=Math.floor(ctx.sampleRate*.15),buffer=ctx.createBuffer(1,length,ctx.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<length;i++)data[i]=(Math.random()*2-1)*(1-i/length);const source=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),gain=ctx.createGain();source.buffer=buffer;filter.type='bandpass';filter.frequency.value=1800;gain.gain.value=.009;source.connect(filter).connect(gain).connect(ctx.destination);source.start()}

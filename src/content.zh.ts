@@ -1,0 +1,40 @@
+import type {Kind,PersonKey} from './core/rules.ts';
+export const text={
+ whispers:{enterFirst:["别急，先看看对面是个什么人。", "头一次碰面，信不信，你自己拿主意。", "先不用想太多，第一步怎么走，看你自己。"],
+enterNext:["又换了一个人，别拿上一个人的样子去套这一个。", "这一个你还不认识，慢慢看。", "新的人，新的脾气。"],
+trustFirst:["你先伸了手。这样做，心里踏实。", "第一下就给了信任，我看得出来，你不想一上来就防着人。", "先信一次，输赢是后话。"],
+bothTrust:["你看，两边都实在，大家都有得赚。", "这样来回，谁也没吃亏。", "安安稳稳的，挺好。"],
+firstBetrayed:["疼吧。信一个人，就得准备好被骗一次。", "他骗了你。这一下记住就行，不用急着还。", "亏了一枚。钱少，心里那一下比钱重。"],
+betrayedAgain:["他又来了。你想想，还要不要接着信。", "同一个坑，又踩了一回。", "这是第二次了，你心里应该有数了。"],
+firstCheat:["你第一次出手骗人。我看见了。", "这一下你赚了，心里舒服吗？", "你想过他下一轮会怎么对你吗？"],
+cheatTrusting:["拿到手了，三枚。只是他还信着你呢。", "赚是赚了，对面那个人一点防备都没有。", "他把金币放进去的时候，是真的相信你。"],
+retaliate:["以牙还牙，这很人之常情。", "你把他给你的，原样还回去了。", "他先动的手，你这样做，说得通。"],
+forgive:["挨了一下还肯再信，不是谁都做得到。", "你又给了他一次机会。这一步，要么傻，要么大度，看他怎么回。", "你没有记仇。看看他会不会珍惜。"],
+bothCheat:["两边都不信了，谁也没赚，就这么耗着。", "互相防着，一个子也赚不到。", "都不肯先退一步。"],
+trustStreak:["你一直在信他，我替你数着呢。", "三轮了，你一直很稳。", "你不太会变卦，对吧。"],
+cheatStreak:["你连着三轮都在骗，这是习惯了，还是只想快点赢？", "你下手越来越熟练了。", "你是不是已经不太在意对面是谁了？"],
+opponentTurned:["他变了。刚才还好好的，这一下是怎么回事？", "前面都顺，他突然翻脸，这种人最难防。", "你没看出来，也怪不得你。"],
+lastRound:["最后一轮了，想好怎么收尾。", "这是最后一下，之后你们不会再碰面了。", "最后一轮，跟前面都不一样，你自己掂量。"],
+lowCoins:["钱不多了，每一枚都得掂量掂量。", "手里越来越紧了。", "现在每一次选择，都比刚开始重。"],
+endGain:["这一场你赚得不少。不知道对面那个人怎么看你。", "赚了不少。赢得舒服吗？", "钱到手了。至于别的，你自己心里清楚。"],
+endLoss:["这一场亏得多。别怪自己，也别急着怪他。", "亏了，但你看清了一个人。", "这一场不好受，我知道。"],
+endEven:["不输不赢，也是一种结果。", "差不多扯平了。", "谁也没占到什么便宜。"]},
+ mode3d:"3D 进屋",mode2d:"2D 快速",default2d:"以后默认 2D",modeTitle:"选择交易方式",fastHint:"1 信任 · 2 欺诈 · F 重复上一轮 · 按住空格加速",letterEnding:"我写那封信的时候，就想看看，人到最后，会变成什么样。",
+ title:'信任的价格',machineTitle:'信 任 交 易 机',yourTurn:'该你了 · 点一下金币',insertCoin:'点绿色或红色投币口',quality:'画质',high:'高',low:'低',physics:'金币物理',on:'开',off:'关',enterHouse:'进入小屋',yourWay:'你的做法',opening:'起手',conditionLabels:['双方都信任之后','被骗之后','你骗了对方之后','双方都欺诈之后'],includeYou:'把你也放进世界',youOut:'你离开了这个世界',youSurvived:'你也留到了最后',trustLoss:'你一次次信任，却没有等来同样的回应。',cheatLoss:'你身边已经没有可以继续利用的信任。',otherLoss:'这一次，你的回应没能带来持续的互相合作。',roomInstruction:'点金币，再点投币口 · 1 信任 / 2 欺诈',eyebrow:'一座小镇 · 四次相遇 · 一个世界',tagline:'你愿意用一枚金币，\n相信一个陌生人吗？',start:'开始旅程',loading:'正在准备小镇',loadingNote:'模型只从本机加载。请稍候。',fallback:'部分模型缺失，已使用可交互的占位角色。',
+ missionTitle:'一封没有署名的信',mission:'旅人：\n\n小镇上住着四个人，他们都愿意和陌生人做交易。\n\n你手里有 20 枚金币。去和他们每人交易一场，每场 7 轮，看看会发生什么。\n\n每次交易，你们都要各自押上 1 枚金币。\n\n选择信任，还是欺诈，由你决定。',enterTown:'走进小镇',continue:'继续',backTown:'回到小镇',completed:'已完成',interact:'按 E 进入',hintMove:'WASD / 方向键 移动　·　Shift 小跑　·　拖动鼠标 转视角　·　E 交易　·　Esc 暂停',task:'去认识四位镇民',townNote:'顺序由你决定。靠近镇民，按 E 开始。',trust:'信任',cheat:'欺诈',fast:'快速',you:'你',wallet:'钱包',coin:'枚',round:'轮',with:'与',trade:'交易',roundNet:'本轮净收益',rule:'双方各押 1 枚。都信任各赚 1；欺诈者赚 2、信任者亏 1；都欺诈不赚不亏。',settled:'这场交易结束了',other:'对方',deposit:'押币',cover:'盖牌',reveal:'同时揭晓',distribute:'分币',choose:'做出你的选择',
+ transition:'你和四个人都交易过了。\n他们每个人都有自己的做法。\n现在，把这些做法摆到桌面上。',ranking:'谁赚得最多？',rankSub:'从 20 枚金币开始，加上与其他四人的交易收益。',details:'查看明细',close:'关闭',rank:'排名',total:'总金币',versus:'自己 / 对手',strategies:'看看他们的策略',strategy:'策略',introSub:'重复的选择，藏着每个人的做法。',playerStrategy:'你的选择',trustCount:'信任次数',cheatCount:'欺诈次数',against:'对',introNext:'下一位',worldLead:'一对一的榜单上，\n赚得最多的不一定是最后的赢家。',worldStart:'现在，把这四种人各放 25 个，放进同一个世界。\n每人 20 枚金币，每过一圈要交一笔生活费。\n金币花光的人，就会离开。',worldButton:'进入世界',world:'世界淘汰赛',cycle:'圈',stable:'稳定进度',worldStatus:'真实计算 · 每一对人的记录跨圈保留',worldCamera:'滚轮缩放 · 拖动旋转',people:'人',population:'存活人数',fee:'本圈生活费',feePhase:'全场结算生活费',scanning:'扫描交易',skipping:'正在推进到稳定状态…',skip:'跳到结局',speed:'倍',allOut:'全部离场',survives:'最后留下的人',worldEnded:'世界稳定了',ending:'每次合作，都有下一次。',outro:['信任让合作发生，回应让合作延续。','愿意先伸出手，也记得对方如何回应。'],outroNote:'结语占位，可继续替换。',restart:'重新开始',soundOn:'声音开',soundOff:'已静音',pause:'已暂停',resume:'继续游戏',ready:'准备就绪',loadingError:'加载失败',desktop:'建议在桌面浏览器中体验',version:'3D DEMO · 本地运行',
+ names:{P:'你',A:'A',B:'B',C:'C',D:'D'} as Record<PersonKey,string>,
+ strategyNames:{A:'老好人',B:'铁公鸡',C:'复读机',D:'收割者'} as Record<Kind,string>,
+ strategyRules:{A:'不管对方做什么，永远信任。',B:'永远欺诈。',C:'第一轮信任，之后对方上一轮做什么，自己这一轮就做什么。',D:'前两轮信任，从第三轮起隔一轮欺诈一次；对方只要欺诈过他一次，之后就一直欺诈。'} as Record<Kind,string>,
+ greetings:{A:'你好呀，欢迎来小镇。',B:'你是新来的？',C:'你好，第一次见面。',D:'来啦，进来坐坐。'} as Record<Kind,string>,
+ chatTitle:'先聊几句',chatContinue:'继续',chatStart:'开始交易',ruleIntroButton:'看看机器怎么玩',ruleIntroTitle:'机器怎么玩',ruleIntroLead:'第一次玩？我来简单介绍一下。',ruleIntroLines:['每一轮，我们都先投 1 枚金币，再各自选择信任或欺诈。','都信任：机器各吐 2 枚，各赚 1 枚。','一人信任、一人欺诈：欺诈的人拿 3 枚（赚 2 枚），信任的人拿 0 枚（亏 1 枚）。','都欺诈：机器各吐 1 枚，谁也不赚不亏。'],ruleIntroFinish:'明白了，开始交易',chatStatus:'先聊几句',chatIntro:'点击回复，与对方聊聊。',
+ conversations:{
+  A:{turns:[{line:'一路过来还顺利吗？小镇的路有点绕。',choices:[{text:'挺顺利的，风景很好。',reply:'那就好。我也很喜欢傍晚的这条路。'},{text:'绕了一会儿，不过找到了。',reply:'哈哈，第一次来的人大多会走错。'}]},{line:'你是第一次来到这个小镇吗？',choices:[{text:'是的，还在到处看看。',reply:'慢慢逛，这里有不少有趣的地方。'},{text:'想认识一下住在这里的人。',reply:'欢迎你来找我聊聊天。'}]}],end:'对了，我这里有一台小机器。要不要一起试试？'},
+  B:{turns:[{line:'你是新来的？这里平时没什么人经过。',choices:[{text:'是啊，刚到这里。',reply:'难怪以前没见过你。'},{text:'我想在镇上四处走走。',reply:'走一圈也好，这里不算大。'}]},{line:'你来这里，是想找什么吗？',choices:[{text:'先看看，也认识些人。',reply:'嗯，那你来对地方了。'},{text:'听说这里有些有意思的事。',reply:'有时候，得亲自试试才知道。'}]}],end:'我这里有台机器，你可以试一试。'},
+  C:{turns:[{line:'你好。你刚才在广场上转了一圈吧？',choices:[{text:'对，我在认路。',reply:'我刚来时也花了一阵才记住。'},{text:'是啊，想看看这里有什么。',reply:'广场是个不错的起点。'}]},{line:'你喜欢先观察一会儿，还是马上动手？',choices:[{text:'先看看，再决定。',reply:'嗯，看看情况也不错。'},{text:'我通常会先试一下。',reply:'试过之后会更容易明白。'}]}],end:'正好，这里有台机器，可以一起试试。'},
+  D:{turns:[{line:'欢迎。刚来到这里，感觉怎么样？',choices:[{text:'挺新鲜的，和我想的不一样。',reply:'第一次来，总会有些意外。'},{text:'还在熟悉，不过挺有意思。',reply:'不急，慢慢来。'}]},{line:'今天你还有时间吗？',choices:[{text:'有，正好可以待一会儿。',reply:'那我们可以多聊聊。'},{text:'有一点时间，怎么了？',reply:'没什么，就是随口问问。'}]}],end:'既然来了，要不要看看这台机器怎么玩？'}
+ } as Record<Kind,{turns:{line:string;choices:{text:string;reply:string}[]}[];end:string}>,
+ farewells:{A:'谢谢你陪我聊了一会儿。',B:'就到这里吧。',C:'下次见。',D:'有机会再聊。'} as Record<Kind,string>,
+};
+export const signed=(n:number)=>n>0?'+'+n:String(n);
+export const icon=(m:string)=>m==='C'?'🤝':'🗡️';

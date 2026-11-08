@@ -1,0 +1,51 @@
+[
+  {
+    "role": "player",
+    "source": "/Users/macbook/Downloads/主角玩家_allparts_20261108_150210.glb",
+    "source_sha256": "380a0637f4471da5adea91ec99e82b70d2b01d8cd657125ff77d713ab55e0035",
+    "output": "player.glb",
+    "output_sha256": "21967bb965d4af0fa44c164e554bb40184219d71373fe2ad39066b1cd1ff5e93"
+  },
+  {
+    "role": "npc_a",
+    "source": "/Users/macbook/Downloads/信任者.glb",
+    "source_sha256": "71510d249c3d1d0c2d92ef2a85e11a25ff162952fc40e123172f6bbf83989654",
+    "output": "npc_a.glb",
+    "output_sha256": "0a365d4f336c094aeee26349a35391f8ef608f501de3dff9e23e20015a40b951"
+  },
+  {
+    "role": "npc_b",
+    "source": "/Users/macbook/Downloads/欺骗者.glb",
+    "source_sha256": "9a34fc2321427a40a33d5005fe2177f657c69ef94a9b719233b12777a7f2f38c",
+    "output": "npc_b.glb",
+    "output_sha256": "f4f0833cbfc778beedfc8b00cdae4e581e6e2f0f20d7892fdf38b9a6bb7b7a63"
+  },
+  {
+    "role": "npc_c",
+    "source": "/Users/macbook/Downloads/复读鸡.glb",
+    "source_sha256": "9a21bfb450291f86a2848563f085ad78faa78167474f87135ca106ee7544deca",
+    "output": "npc_c.glb",
+    "output_sha256": "e95993f9a020a3f2a87a6b6dc0622130975808fae3a58ed443045cace4181f5a"
+  },
+  {
+    "role": "npc_d",
+    "source": "/Users/macbook/Downloads/收割者_allparts_20261108_145508.glb",
+    "source_sha256": "7dbf2a1eb50d7df047d0008077aef3ae56becec2eb12d5c5c924669fb034b5fc",
+    "output": "npc_d.glb",
+    "output_sha256": "1789d531c1ea1956ea5fbc894a2425e75b65c0295ab606e22dc101b461717011"
+  },
+  {
+    "role": "town",
+    "source": "/Users/macbook/Downloads/村庄.glb",
+    "source_sha256": "78c852ca2c4844ec9f432598ca322d1f679c8ff15c9a3045462a42802ad6499e",
+    "output": "town.glb",
+    "output_sha256": "78c852ca2c4844ec9f432598ca322d1f679c8ff15c9a3045462a42802ad6499e"
+  },
+  {
+    "role": "coin",
+    "source": "/Users/macbook/Downloads/Hi3D_卡通风格黄色生物金币3D模型_allparts_20261108_155748.glb",
+    "source_sha256": "763e08b97ff8b409c255eb4b51a7787cc43bc4d38ed68ce6fa9a3061bdab517b",
+    "output": "coin.glb",
+    "output_sha256": "70a39e7e8f5ef721fb9fb1e1c07d31689ec52b638617677c9717efb3d92e9a5b"
+  }
+]
